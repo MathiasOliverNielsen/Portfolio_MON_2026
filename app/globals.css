@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:        #080c18;
+  --bg2:       #0e1424;
+  --bg3:       #131929;
+  --cyan:      #00e5d4;
+  --cyan2:     #00b8aa;
+  --cyan-dim:  rgba(0, 229, 212, 0.12);
+  --cyan-glow: rgba(0, 229, 212, 0.06);
+  --text:      #f0f4ff;
+  --muted:     #8892a4;
+  --border:    rgba(0, 229, 212, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ── Background grid ── */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 229, 212, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 212, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Clipped-corner buttons ── */
+.btn-clip {
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan2); }
+
+/* ── Selection ── */
+::selection { background: rgba(0, 229, 212, 0.3); }
+
+/* ── Input/textarea focus ── */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--cyan) !important;
+}
+
+/* ── Smooth transitions for project cards ── */
+.project-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+}
