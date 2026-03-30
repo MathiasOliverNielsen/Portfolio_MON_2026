@@ -3,11 +3,11 @@ import SectionHeading from "./SectionHeading";
 
 const points = [
   {
-    title: "Webbureau eller marketingbureau",
-    desc: "Jeg er åben for begge typer – hvad end der er rigtige opgaver og gode folk at lære af.",
+    title: "Hvilken type praktikplads?",
+    desc: "Jeg er åben for alle muligheder – hvor end der er rigtige opgaver og gode folk at lære af.",
   },
   {
-    title: "Frontend og React-projekter",
+    title: "Frontend og Backend projekter",
     desc: "Min primære styrke er i frontend – men jeg er nysgerrig og vil gerne berøre hele stakken.",
   },
   {
@@ -108,9 +108,7 @@ export default function Praktik() {
               Lad os tage en snak
             </h3>
 
-            <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "1.5rem", lineHeight: 1.65 }}>
-              Hvis du har en praktikplads og leder efter en motiveret webudvikler under uddannelse, hører jeg gerne fra dig.
-            </p>
+            <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "1.5rem", lineHeight: 1.65 }}>Hvis du har en praktikplads og leder efter en motiveret webudvikler under uddannelse, hører jeg gerne fra dig.</p>
 
             <a
               href="#kontakt"
