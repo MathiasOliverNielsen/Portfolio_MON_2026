@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
+
 import SectionHeading from "./SectionHeading";
+import { FaPhone, FaEnvelope, FaGlobe, FaGithub } from "react-icons/fa";
 
 const contactInfo = [
-  { label: "Telefon", value: "+45 31514803", href: "tel:+4531514803", icon: "📞" },
-  { label: "Email", value: "Math324a@gmail.com", href: "mailto:Math324a@gmail.com", icon: "✉" },
-  { label: "Website", value: "minportfolio.dk", href: "https://minportfolio.dk", icon: "🌐" },
-  { label: "GitHub", value: "github.com/dit-navn", href: "https://github.com", icon: "⌨" },
+  { label: "Telefon", value: "+45 31514803", href: "tel:+4531514803", icon: <FaPhone /> },
+  { label: "Email", value: "Math324a@gmail.com", href: "mailto:Math324a@gmail.com", icon: <FaEnvelope /> },
+  { label: "Website", value: "minportfolio.dk", href: "https://minportfolio.dk", icon: <FaGlobe /> },
+  { label: "GitHub", value: "github.com/dit-navn", href: "https://github.com", icon: <FaGithub /> },
 ];
 
 export default function Contact() {
