@@ -95,7 +95,7 @@ export default function Praktik() {
                 letterSpacing: "0.05em",
               }}
             >
-              Periode: 2025
+              Periode: 2026
             </div>
 
             <h3
