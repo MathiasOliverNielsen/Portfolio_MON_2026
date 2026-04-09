@@ -37,24 +37,15 @@ export default function Hero() {
           </h1>
 
           {/* Roterende rolle */}
-          <p
-            className={`font-syne text-[1.05rem] text-muted tracking-[0.04em] mb-6 transition-opacity transition-transform duration-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
-          >
-            {roles[roleIndex]}
-          </p>
+          <p className={`font-syne text-[1.05rem] text-muted tracking-[0.04em] mb-6 transition-opacity transition-transform duration-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}>{roles[roleIndex]}</p>
 
-          <p className="text-muted text-[0.97rem] max-w-[460px] mb-10 leading-[1.75]">
-            Jeg er i gang med at uddanne mig som webudvikler og søger en virksomhedspraktik, hvor jeg kan udvikle mine kompetencer og få erfaring med rigtige opgaver.
-          </p>
+          <p className="text-muted text-[0.97rem] max-w-[460px] mb-10 leading-[1.75]">Jeg er i gang med at uddanne mig som webudvikler og søger en virksomhedspraktik, hvor jeg kan udvikle mine kompetencer og få erfaring med rigtige opgaver.</p>
 
           <div className="flex gap-4 flex-wrap">
             <a href="#projekter" className="btn-clip bg-cyan text-[#080c18] px-7 py-3 font-medium text-[0.9rem] inline-block transition-colors duration-200 hover:bg-cyan2">
               Se projekter
             </a>
-            <a
-              href="#kontakt"
-              className="btn-clip bg-transparent text-cyan px-7 py-3 font-medium text-[0.9rem] inline-block border border-border transition-colors duration-200 hover:bg-cyan-dim hover:border-cyan"
-            >
+            <a href="#kontakt" className="btn-clip bg-transparent text-cyan px-7 py-3 font-medium text-[0.9rem] inline-block border border-border transition-colors duration-200 hover:bg-cyan-dim hover:border-cyan">
               Kontakt mig
             </a>
           </div>
@@ -112,8 +103,6 @@ export default function Hero() {
               }}
             >
               {/*
-               * Udskift dette med et rigtigt billede:
-               * <Image src="/profilbillede.jpg" alt="Mathias" fill style={{ objectFit: 'cover' }} />
                */}
               <span className="font-syne text-[5rem] font-extrabold text-cyan leading-none">M</span>
               <span className="text-[0.72rem] text-muted tracking-[0.18em] uppercase">Web Udvikler</span>
