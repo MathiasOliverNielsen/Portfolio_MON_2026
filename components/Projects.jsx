@@ -1,56 +1,57 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SectionHeading from "./SectionHeading";
 
+const projects = [
+  {
+    id: 1,
+    title: "Projekt 1",
+    description: "Kort beskrivelse af dit første projekt",
+    tech: ["React", "Next.js", "Tailwind"],
+    image: "/projects/project1.jpg",
+    featured: true,
+    liveUrl: "https://project1.vercel.app",
+    githubUrl: "https://github.com/MathiasOliverNielsen/project1",
+  },
+  {
+    id: 2,
+    title: "Projekt 2",
+    description: "Kort beskrivelse af dit andet projekt",
+    tech: ["JavaScript", "HTML", "CSS"],
+    image: "/projects/project2.jpg",
+    featured: false,
+    liveUrl: "https://project2.vercel.app",
+    githubUrl: "https://github.com/MathiasOliverNielsen/React-Calculater-App",
+  },
+  {
+    id: 3,
+    title: "Projekt 3",
+    description: "Kort beskrivelse af dit tredje projekt",
+    tech: ["React", "Firebase", "Tailwind"],
+    image: "/projects/project3.jpg",
+    featured: true,
+    liveUrl: "https://project3.vercel.app",
+    githubUrl: "https://github.com/MathiasOliverNielsen/project3",
+  },
+];
+
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((res) => {
-        if (!res.ok) throw new Error("Kunne ikke hente projekter");
-        return res.json();
-      })
-      .then((data) => {
-        setProjects(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
   return (
     <section id="projekter" style={{ padding: "6rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
       <SectionHeading label="Portfolio" title="Mine projekter" />
 
-      {loading && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "1.5rem" }}>
-          {[1, 2, 3].map((i) => (
-            <SkeletonCard key={i} />
-          ))}
-        </div>
-      )}
-
-      {error && <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>Fejl: {error}</p>}
-
-      {!loading && !error && (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-            gap: "1.5rem",
-          }}
-        >
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      )}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+          gap: "1.5rem",
+        }}
+      >
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
     </section>
   );
 }
@@ -95,7 +96,6 @@ function ProjectCard({ project }) {
         />
 
         {project.image ? (
-          // Hvis der er et rigtigt billede i /public/projects/
           // eslint-disable-next-line @next/next/no-img-element
           <img src={project.image} alt={project.title} style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
         ) : (
@@ -190,27 +190,6 @@ function ProjectCard({ project }) {
           )}
         </div>
       </div>
-    </div>
-  );
-}
-
-// Loading skeleton
-function SkeletonCard() {
-  return (
-    <div
-      style={{
-        background: "var(--bg3)",
-        border: "1px solid var(--border)",
-        overflow: "hidden",
-      }}
-    >
-      <div style={{ height: 180, background: "var(--bg2)", animation: "pulse 1.5s infinite" }} />
-      <div style={{ padding: "1.25rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-        <div style={{ height: 18, width: "60%", background: "var(--bg2)", borderRadius: 2 }} />
-        <div style={{ height: 12, width: "90%", background: "var(--bg2)", borderRadius: 2 }} />
-        <div style={{ height: 12, width: "75%", background: "var(--bg2)", borderRadius: 2 }} />
-      </div>
-      <style>{`@keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.5 } }`}</style>
     </div>
   );
 }

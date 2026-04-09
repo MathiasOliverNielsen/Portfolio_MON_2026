@@ -1,6 +1,6 @@
 export default function SectionHeading({ label, title }) {
   return (
-    <div style={{ marginBottom: "2rem" }}>
+    <div style={{ marginBottom: "2rem", overflow: "visible" }}>
       <div
         style={{
           fontSize: "0.75rem",
@@ -8,7 +8,7 @@ export default function SectionHeading({ label, title }) {
           textTransform: "uppercase",
           color: "var(--cyan)",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           gap: "0.75rem",
           marginBottom: "0.75rem",
         }}
@@ -24,19 +24,18 @@ export default function SectionHeading({ label, title }) {
         />
         {label}
       </div>
-
       <h2
         style={{
           fontFamily: "var(--font-syne)",
           fontWeight: 700,
           fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
           marginBottom: "1rem",
-          lineHeight: 1,
+          lineHeight: 1.35,
+          overflow: "visible",
         }}
       >
         {title}
       </h2>
-
       <div
         style={{
           width: 48,

@@ -11,7 +11,6 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <>
-      {/* Baggrundsgrid – fast bag alt indhold */}
       <div className="bg-grid" />
 
       <Navbar />
