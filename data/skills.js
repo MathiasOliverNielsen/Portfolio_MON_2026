@@ -1,8 +1,3 @@
-/**
- * Rediger dine kompetencer her.
- * level: 0-100 — vær ærlig, det er bedre at underrapportere end at love for meget.
- * category: bruges til filtrering i Skills-komponenten.
- */
 
 export const skills = [
   // Frontend
