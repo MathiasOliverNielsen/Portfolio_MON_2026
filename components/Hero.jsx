@@ -43,15 +43,15 @@ export default function Hero() {
           </h1>
 
           {/* Roterende rolle */}
-          <p className={`font-syne text-[1.05rem] text-muted tracking-[0.04em] transition-all duration-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>{roles[roleIndex]}</p>
+          <p className={`font-syne text-[1.05rem] text-muted tracking-[0.04em] mb-6 transition-opacity transition-transform duration-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}>{roles[roleIndex]}</p>
 
-          <p className="text-muted text-[0.97rem] max-w-[480px] leading-relaxed">Jeg er i gang med at uddanne mig som webudvikler og søger en virksomhedspraktik, hvor jeg kan udvikle mine kompetencer og få erfaring med rigtige opgaver.</p>
+          <p className="text-muted text-[0.97rem] max-w-[460px] mb-10 leading-[1.75]">Jeg er i gang med at uddanne mig som webudvikler og søger en virksomhedspraktik, hvor jeg kan udvikle mine kompetencer og få erfaring med rigtige opgaver.</p>
 
           <div className="flex gap-3 flex-wrap pt-2">
             <a href="#projekter" className="btn-clip bg-cyan text-[#080c18] px-7 py-3 font-medium text-[0.9rem] inline-block transition-all duration-300 hover:bg-cyan2 hover:shadow-lg hover:shadow-cyan/40 active:scale-95">
               Se projekter
             </a>
-            <a href="#kontakt" className="btn-clip bg-transparent text-cyan px-7 py-3 font-medium text-[0.9rem] inline-block border border-border transition-all duration-300 hover:bg-cyan/10 hover:border-cyan hover:shadow-lg hover:shadow-cyan/20 active:scale-95">
+            <a href="#kontakt" className="btn-clip bg-transparent text-cyan px-7 py-3 font-medium text-[0.9rem] inline-block border border-border transition-colors duration-200 hover:bg-cyan-dim hover:border-cyan">
               Kontakt mig
             </a>
           </div>
@@ -73,10 +73,10 @@ export default function Hero() {
                 boxShadow: "0 12px 40px rgba(0, 255, 255, 0.1)",
               }}
             >
-              {/* Image container - pure and simple */}
-              <div className="relative w-full h-full bg-bg3">
-                <Image src="/img/Adobe Express - file.png" alt="Mathias Oliver Nielsen - Web Udvikler" fill style={{ objectFit: "contain", objectPosition: "center" }} priority quality={95} />
-              </div>
+              {/*
+               */}
+              <span className="font-syne text-[5rem] font-extrabold text-cyan leading-none">M</span>
+              <span className="text-[0.72rem] text-muted tracking-[0.18em] uppercase">Web Udvikler</span>
             </div>
           </div>
         </div>
